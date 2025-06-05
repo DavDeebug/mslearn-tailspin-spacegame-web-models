@@ -4,6 +4,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '8.0.x'
+  feedName: 'Tailspin.SpaceGame.Web.Models2'
 
 steps:
 - task: UseDotNet@2
@@ -39,5 +40,5 @@ steps:
   displayName: 'Publish NuGet package'
   inputs:
     command: push
-    feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
+    feedPublish: '$(System.TeamProject)/$(feedName)'
   condition: succeeded()

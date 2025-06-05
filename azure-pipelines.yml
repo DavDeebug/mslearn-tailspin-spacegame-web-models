@@ -4,7 +4,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '8.0.x'
-  feedName: 'Tailspin.SpaceGame.Web.Models2'
+  feedName: 'Tailspin.SpaceGame.Web.Models3'
 
 steps:
 - task: UseDotNet@2

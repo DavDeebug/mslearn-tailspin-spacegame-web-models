@@ -1,9 +1,10 @@
 pool:
-  vmImage: 'ubuntu-20.04'
+  vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
-  dotnetSdkVersion: '6.x'
+  dotnetSdkVersion: '8.0.x'
+  feedName: Tailspin.SpaceGame.Web.Models2'
 
 steps:
 - task: UseDotNet@2
@@ -39,6 +40,6 @@ steps:
   displayName: 'Publish NuGet package'
   inputs:
     command: push
-    feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
+    feedPublish: '$(System.TeamProject)/$(feedName)'
     allowPackageConflicts: true
   condition: succeeded()
